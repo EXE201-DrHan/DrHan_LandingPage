@@ -17,7 +17,11 @@ export function DoctorSection() {
 
           <div className="relative">
             <div className="bg-gray-200 rounded-2xl overflow-hidden">
-              <img src="/placeholder.svg?height=400&width=400" alt="Dr. Han" className="w-full h-96 object-cover" />
+              <img
+                src="images/comingsoon.png?height=400&width=400"
+                alt="Dr. Han"
+                className="w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>

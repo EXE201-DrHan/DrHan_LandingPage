@@ -197,7 +197,7 @@ export class FirebaseNotificationService {
         body: data.body,
         icon: data.icon || '/icon-192x192.png',
         badge: data.badge || '/badge-72x72.png',
-        image: data.image,
+        //image: data.image,
         data: data.data,
         requireInteraction: true,
         tag: 'nutri-guardian-fcm-notification'

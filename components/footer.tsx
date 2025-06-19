@@ -10,9 +10,11 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-sm">N</span>
-              </div>
+              <img
+                src="/images/logo.png"
+                alt="Nutri Guardian Logo"
+                className="w-10 h-10 md:w-16 md:h-16 object-contain rounded-full"
+              />
               <span className="font-semibold text-gray-900">Nutri-Guardian</span>
             </div>
 
