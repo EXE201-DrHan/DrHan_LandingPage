@@ -8,20 +8,20 @@ export function Hero() {
       <div
         className="absolute inset-0 bg-cover bg-center opacity-30"
         style={{
-          backgroundImage: "url('/placeholder.svg?height=600&width=1200')",
+          backgroundImage: "url('/images/placeholder-image.png?height=600&width=1200')",
         }}
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="flex items-center justify-between">
           <div className="max-w-2xl">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full flex items-center justify-center">
-                <span className="text-white font-bold">N</span>
-              </div>
-              <span className="text-white font-medium">Nutri-Guardian</span>
+            <div className="flex items-center space-x-4 mb-8">
+              <img
+                src="/images/logo.png"
+                alt="Nutri Guardian Logo"
+                className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] object-contain"
+              />
             </div>
-
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Your Personal Ally
               <br />
@@ -32,10 +32,13 @@ export function Hero() {
 
             <p className="text-gray-300 text-lg mb-8">Nutritionist for allergy sufferers</p>
 
-            <Button className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 rounded-full flex items-center space-x-2">
-              <span>Download</span>
-              <Play className="w-5 h-5 fill-current" />
-            </Button>
+            <a href="#" className="inline-block">
+              <img
+                src="/images/chplay.png"
+                alt="Download on CH Play"
+                className="w-[200px] md:w-[240px] h-auto"
+              />
+            </a>
 
             <p className="text-gray-400 text-sm mt-4">Now available on CH Play</p>
           </div>
@@ -48,7 +51,7 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-white font-medium">Call Us</p>
-                  <p className="text-gray-300 text-sm">+84 123 456 789</p>
+                  <p className="text-gray-300 text-sm">0903 744 380</p>
                 </div>
               </div>
 
@@ -58,7 +61,7 @@ export function Hero() {
                 </div>
                 <div>
                   <p className="text-white font-medium">Email</p>
-                  <p className="text-gray-300 text-sm">contact@nutriguardian.com</p>
+                  <p className="text-gray-300 text-sm">nutriguardian_app@gmail.com</p>
                 </div>
               </div>
             </div>
