@@ -1,10 +1,9 @@
-import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { AnalyticsProvider } from "@/components/analytics-provider"
+import { ClientWrapper } from "@/components/client-wrapper"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -21,11 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AnalyticsProvider>
+        <ClientWrapper>
           <Header />
           <main>{children}</main>
           <Footer />
-        </AnalyticsProvider>
+        </ClientWrapper>
       </body>
     </html>
   )

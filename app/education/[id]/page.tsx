@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const author = {
   name: "Quy Co Dep Trai",
-  avatar: "/images/author.jpg",
+  avatar: "/images/phuchong.jpg",
   description:
     "Dr. Han is an award-winning allergist and immunologist, dedicated to advancing research and treatment for allergy-related conditions. As the founder of The Allergy Care Initiative, a global movement focused on improving allergy awareness and treatment accessibility, she has worked to encourage 500 medical institutions and organizations to commit to better allergy care and patient inclusion.",
 }
