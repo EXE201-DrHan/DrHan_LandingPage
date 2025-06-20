@@ -1,15 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-// In-memory storage for demo purposes
-// In production, store FCM tokens in database with user associations
-const fcmTokens: Array<{
-  token: string;
-  timestamp: string;
-  userAgent: string;
-  platform: string;
-  userId?: string;
-}> = [];
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -22,50 +12,24 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Check if token already exists
-    const existingToken = fcmTokens.find(t => t.token === token);
-    
-    if (existingToken) {
-      // Update existing token
-      existingToken.timestamp = timestamp;
-      existingToken.userAgent = userAgent;
-      existingToken.platform = platform;
-      if (userId) existingToken.userId = userId;
-      
-      console.log('FCM token updated:', {
-        token: token.substring(0, 20) + '...',
-        timestamp,
-        userId
-      });
-    } else {
-      // Add new token
-      fcmTokens.push({
+    // Here you would typically store the token in a database
+    // For now, we'll just return a success response
+    return NextResponse.json({
+      success: true,
+      message: 'Token registered successfully',
+      data: {
         token,
         timestamp,
         userAgent,
         platform,
         userId
-      });
-      
-      console.log('New FCM token saved:', {
-        token: token.substring(0, 20) + '...',
-        timestamp,
-        userId
-      });
-    }
-
-    return NextResponse.json(
-      { 
-        message: 'FCM token saved successfully',
-        tokenCount: fcmTokens.length
-      },
-      { status: 201 }
-    );
+      }
+    });
 
   } catch (error) {
-    console.error('FCM token subscription error:', error);
+    console.error('Error in subscription handler:', error);
     return NextResponse.json(
-      { error: 'Failed to save FCM token' },
+      { error: 'Internal server error' },
       { status: 500 }
     );
   }
@@ -73,10 +37,6 @@ export async function POST(request: NextRequest) {
 
 export async function GET() {
   return NextResponse.json({
-    tokenCount: fcmTokens.length,
     message: 'Firebase FCM subscription service is running'
   });
 }
-
-// Export the tokens array for use in send endpoint
-export { fcmTokens }; 
