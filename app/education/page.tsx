@@ -56,7 +56,7 @@ export default function EducationPage() {
                 <h2 className="text-2xl font-bold mb-2">{articles[0].title}</h2>
                 <p className="text-gray-600 mb-4">{articles[0].excerpt}</p>
                 <div className="flex items-center space-x-3 text-sm text-gray-500">
-                  <Image src={"/images/author.jpg"} alt="Dr. Sarah Johnson" width={32} height={32} className="rounded-full" />
+                  <Image src={"/images/phuchong.jpg"} alt="Dr. Sarah Johnson" width={32} height={32} className="rounded-full" />
                   <span>Dr. Sarah Johnson</span>
                   <span>•</span>
                   <span>Posted on {articles[0].date}</span>
@@ -76,7 +76,7 @@ export default function EducationPage() {
                     <h3 className="text-lg font-bold mb-1">{article.title}</h3>
                     <p className="text-gray-600 mb-2">{article.excerpt}</p>
                     <div className="flex items-center space-x-2 text-sm text-gray-500 mt-auto">
-                      <Image src={"/images/author.jpg"} alt="Dr. Sarah Johnson" width={24} height={24} className="rounded-full" />
+                      <Image src={"/images/phuchong.jpg"} alt="Dr. Sarah Johnson" width={24} height={24} className="rounded-full" />
                       <span>{article.author}</span>
                       <span>•</span>
                       <span>{article.date}</span>
