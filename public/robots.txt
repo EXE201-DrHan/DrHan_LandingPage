@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+
+# Important pages
+Sitemap: https://nutri-guardian.com/sitemap.xml
+
+# Block admin and private areas
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important SEO files
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Crawl delay (optional)
+Crawl-delay: 1

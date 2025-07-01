@@ -23,6 +23,7 @@ export function Hero() {
               />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              <span className="sr-only">Nutri-Guardian: </span>
               Your Personal Ally
               <br />
               In <span className="text-yellow-400">Allergy-Friendly</span>
@@ -30,7 +31,9 @@ export function Hero() {
               <span className="text-yellow-400">Eating</span>
             </h1>
 
-            <p className="text-gray-300 text-lg mb-8">Nutritionist for allergy sufferers</p>
+            <p className="text-gray-300 text-lg mb-8">
+              Nutritionist app for allergy sufferers - Get personalized meal plans and expert guidance for safe, healthy eating.
+            </p>
 
             <a href="#" className="inline-block">
               <img

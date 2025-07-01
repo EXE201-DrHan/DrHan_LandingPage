@@ -3,6 +3,27 @@ import { User, Calendar } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { articles, Article } from "@/lib/articles"
+import { generateMetadata } from "@/lib/seo"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+  title: "Food Allergy Education Hub - Expert Articles & Resources",
+  description: "Comprehensive food allergy education center with expert articles on common allergies, seafood allergies, milk allergies, symptoms, treatments, and safety tips for allergy sufferers.",
+  keywords: [
+    "food allergy education",
+    "allergy articles",
+    "food safety education",
+    "allergy symptoms",
+    "allergy treatment",
+    "seafood allergy",
+    "milk allergy",
+    "common food allergies",
+    "allergy resources",
+    "nutrition education"
+  ],
+  url: "/education",
+  type: "website"
+})
 
 const categories = [
   { name: "Common food allergy", count: 24 },
