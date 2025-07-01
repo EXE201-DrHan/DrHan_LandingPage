@@ -1,5 +1,23 @@
 import { Users, HeartHandshake, Globe2 } from "lucide-react"
 import Image from 'next/image'
+import { generateMetadata } from "@/lib/seo"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = generateMetadata({
+  title: "About Us - Meet the Dr. Han Team",
+  description: "Learn about Nutri-Guardian and the Dr. Han team's mission to empower people with food allergies through education, support, and innovation for healthier, happier lives.",
+  keywords: [
+    "about nutri-guardian",
+    "dr han team",
+    "food allergy experts",
+    "nutrition team",
+    "allergy-friendly mission",
+    "health innovation",
+    "food safety experts"
+  ],
+  url: "/about",
+  type: "website"
+})
 
 export default function AboutPage() {
   return (
