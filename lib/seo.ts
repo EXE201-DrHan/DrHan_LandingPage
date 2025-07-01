@@ -62,7 +62,7 @@ export function generateMetadata({
         },
       ],
       locale: 'en_US',
-      type: 'article',
+      type: type === 'product' ? 'website' : type,
       publishedTime,
       modifiedTime,
       section,
@@ -98,10 +98,14 @@ export function generateMetadata({
 
 export const defaultSEO: SEOConfig = {
   title: 'Nutri-Guardian - Your Personal Ally In Allergy-Friendly Eating',
-  description: 'Nutri-Guardian is your trusted nutritionist app for allergy sufferers. Get personalized meal plans, ingredient analysis, and expert guidance for safe, healthy eating with food allergies.',
+  description: 'Nutri-Guardian is your trusted nutritionist app for allergy sufferers. Get personalized meal plans, ingredient analysis, and expert guidance for safe, healthy eating with food allergies. Download the Nutri Guardian app today for allergy-safe nutrition.',
   keywords: [
+    'nutri guardian',
+    'nutri-guardian',
+    'nutriguardian',
+    'nutri guardian app',
     'food allergies',
-    'nutrition',
+    'nutrition app',
     'allergy-friendly eating',
     'meal planning',
     'food safety',
@@ -111,7 +115,11 @@ export const defaultSEO: SEOConfig = {
     'allergen detection',
     'safe eating',
     'food intolerance',
-    'healthy lifestyle'
+    'healthy lifestyle',
+    'allergy nutrition',
+    'food allergy management',
+    'dr han team',
+    'allergy-safe recipes'
   ],
 }
 

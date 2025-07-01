@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "deploy:vercel": "npm run build && vercel --prod",
+    "deploy:netlify": "npm run build && echo 'Upload the .next folder to Netlify'",
+    "seo:check": "echo 'Checking SEO...' && npm run build",
+    "sitemap:generate": "npm run build && echo 'Sitemap available at /sitemap.xml'"
+  }
+}
