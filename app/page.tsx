@@ -5,6 +5,7 @@ import { StatsSection } from "@/components/stats-section"
 import { FeaturesSection } from "@/components/features-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { DoctorSection } from "@/components/doctor-section"
+import { BrandSection } from "@/components/brand-section"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { ReactNode } from "react"
 import { StructuredData, FAQStructuredData } from "@/components/structured-data"
@@ -41,20 +42,28 @@ export default function HomePage() {
   
   const faqData = [
     {
-      question: "What is Nutri-Guardian?",
-      answer: "Nutri-Guardian is a specialized nutritionist app designed for people with food allergies. It provides personalized meal plans, ingredient analysis, and expert guidance for safe, allergy-friendly eating."
+      question: "What is Nutri-Guardian by Dr. Han Team?",
+      answer: "Nutri-Guardian is the leading food allergy management app created by Dr. Han Team. It provides personalized meal plans, advanced allergen detection, and expert nutritional guidance for safe, allergy-friendly eating. Download Nutri Guardian app for comprehensive allergy management."
     },
     {
-      question: "How does Nutri-Guardian help with food allergies?",
-      answer: "Our app offers ingredient analysis, allergy-safe recipe recommendations, nutritional guidance, and educational resources to help you manage your food allergies safely and effectively."
+      question: "How does the Nutri-Guardian app help with food allergies?",
+      answer: "The Nutri-Guardian app by Dr. Han Team offers real-time ingredient analysis, allergy-safe recipe recommendations, personalized nutrition tracking, and educational resources to help you manage food allergies safely and effectively."
     },
     {
       question: "Is Nutri-Guardian suitable for all types of food allergies?",
-      answer: "Yes, Nutri-Guardian supports various food allergies including common allergens like nuts, dairy, seafood, eggs, and more. Our database covers a wide range of allergenic ingredients."
+      answer: "Yes, Nutri-Guardian supports various food allergies including nuts, dairy, seafood, eggs, gluten, and more. Our comprehensive database covers a wide range of allergenic ingredients with expert guidance from Dr. Han Team."
     },
     {
       question: "Can I get personalized meal plans with Nutri-Guardian?",
-      answer: "Absolutely! Nutri-Guardian creates customized meal plans based on your specific allergies, dietary preferences, and nutritional needs to ensure safe and healthy eating."
+      answer: "Absolutely! Nutri-Guardian creates customized meal plans based on your specific allergies, dietary preferences, and nutritional needs. Dr. Han Team's expertise ensures safe and healthy eating recommendations."
+    },
+    {
+      question: "Who created the Nutri-Guardian food allergy app?",
+      answer: "Nutri-Guardian was created by Dr. Han Team, a group of nutrition experts specializing in food allergy management. The team combines medical expertise with technology to provide the best allergy-safe nutrition solutions."
+    },
+    {
+      question: "Is the Nutri-Guardian app free to download?",
+      answer: "Yes, Nutri-Guardian is free to download and use. The app provides comprehensive food allergy management features at no cost, making allergy-safe nutrition accessible to everyone."
     }
   ]
 
@@ -68,6 +77,10 @@ export default function HomePage() {
       
       <AnimatedSection delay={100}>
         <StatsSection />
+      </AnimatedSection>
+      
+      <AnimatedSection delay={150}>
+        <BrandSection />
       </AnimatedSection>
       
       <AnimatedSection delay={200}>

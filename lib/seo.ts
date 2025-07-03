@@ -13,7 +13,7 @@ export interface SEOConfig {
   section?: string
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nutri-guardian.com'
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nutriguardian.vercel.app'
 const defaultImage = '/images/logo_better.png'
 
 export function generateMetadata({
@@ -97,29 +97,33 @@ export function generateMetadata({
 }
 
 export const defaultSEO: SEOConfig = {
-  title: 'Nutri-Guardian - Your Personal Ally In Allergy-Friendly Eating',
-  description: 'Nutri-Guardian is your trusted nutritionist app for allergy sufferers. Get personalized meal plans, ingredient analysis, and expert guidance for safe, healthy eating with food allergies. Download the Nutri Guardian app today for allergy-safe nutrition.',
+  title: 'Nutri-Guardian - Food Allergy Management App | Dr. Han Team',
+  description: 'Nutri-Guardian by Dr. Han Team - The leading food allergy management app. Get personalized nutrition plans, allergen detection, and expert guidance for safe eating. Download Nutri Guardian app for comprehensive allergy-friendly nutrition support.',
   keywords: [
     'nutri guardian',
-    'nutri-guardian',
+    'nutri-guardian', 
     'nutriguardian',
     'nutri guardian app',
-    'food allergies',
-    'nutrition app',
+    'nutri guardian food allergy',
+    'dr han team nutri guardian',
+    'food allergy app',
+    'allergy management app',
+    'nutrition app for allergies',
+    'allergen detection app',
+    'food safety app',
     'allergy-friendly eating',
-    'meal planning',
-    'food safety',
+    'personalized nutrition',
+    'meal planning allergies',
+    'food intolerance app',
+    'dietary restrictions app',
     'nutritionist app',
-    'dietary restrictions',
     'health app',
-    'allergen detection',
-    'safe eating',
-    'food intolerance',
-    'healthy lifestyle',
-    'allergy nutrition',
+    'safe eating app',
+    'allergy nutrition guidance',
     'food allergy management',
-    'dr han team',
-    'allergy-safe recipes'
+    'allergy-safe recipes',
+    'ingredient checker',
+    'nutrition tracker allergies'
   ],
 }
 
@@ -133,9 +137,11 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
       return {
         ...baseData,
         '@type': 'WebSite',
-        name: 'Nutri-Guardian',
+        name: 'Nutri-Guardian - Food Allergy Management App',
+        alternateName: ['Nutri Guardian', 'NutriGuardian', 'Nutri-Guardian App'],
         description: defaultSEO.description,
         url: baseUrl,
+        keywords: 'nutri guardian, food allergy app, nutrition app, allergy management, dr han team',
         potentialAction: {
           '@type': 'SearchAction',
           target: `${baseUrl}/search?q={search_term_string}`,
@@ -149,17 +155,31 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
             url: `${baseUrl}/images/logo_better.png`,
           },
         },
+        sameAs: [
+          'https://nutriguardian.vercel.app',
+          'https://facebook.com/nutriguardian',
+          'https://twitter.com/nutriguardian',
+          'https://instagram.com/nutriguardian',
+        ],
       }
 
     case 'organization':
       return {
         ...baseData,
         '@type': 'Organization',
-        name: 'Nutri-Guardian',
-        description: defaultSEO.description,
+        name: 'Dr. Han Team - Nutri-Guardian',
+        alternateName: 'Nutri Guardian',
+        description: 'Creators of Nutri-Guardian, the leading food allergy management app. Expert team providing nutritional guidance and allergy-safe eating solutions.',
         url: baseUrl,
         logo: `${baseUrl}/images/logo_better.png`,
+        founder: {
+          '@type': 'Person',
+          name: 'Dr. Han',
+        },
+        foundingDate: '2024',
+        keywords: 'nutri guardian, dr han team, food allergy experts, nutrition app developers',
         sameAs: [
+          'https://nutriguardian.vercel.app',
           'https://facebook.com/nutriguardian',
           'https://twitter.com/nutriguardian',
           'https://instagram.com/nutriguardian',
@@ -167,7 +187,8 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
         contactPoint: {
           '@type': 'ContactPoint',
           contactType: 'Customer Service',
-          email: 'support@nutri-guardian.com',
+          email: 'nutriguardian_app@gmail.com',
+          telephone: '0903 744 380',
         },
       }
 
@@ -175,21 +196,44 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
       return {
         ...baseData,
         '@type': 'SoftwareApplication',
-        name: 'Nutri-Guardian',
-        description: defaultSEO.description,
+        name: 'Nutri-Guardian - Food Allergy Management App',
+        alternateName: ['Nutri Guardian', 'NutriGuardian App', 'Nutri-Guardian App'],
+        description: 'The most comprehensive food allergy management app by Dr. Han Team. Features allergen detection, personalized nutrition plans, and expert guidance for safe eating.',
         url: baseUrl,
         applicationCategory: 'HealthApplication',
-        operatingSystem: 'Android, iOS',
+        applicationSubCategory: 'Nutrition & Food Allergy Management',
+        operatingSystem: 'Android, iOS, Web',
+        keywords: 'nutri guardian, food allergy app, nutrition tracker, allergen detector, meal planner',
+        author: {
+          '@type': 'Organization',
+          name: 'Dr. Han Team',
+        },
+        publisher: {
+          '@type': 'Organization', 
+          name: 'Dr. Han Team',
+        },
+        datePublished: '2024-01-01',
+        version: '1.0',
         offers: {
           '@type': 'Offer',
           price: '0',
           priceCurrency: 'USD',
+          availability: 'https://schema.org/InStock',
         },
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: '4.8',
           ratingCount: '1250',
+          bestRating: '5',
+          worstRating: '1',
         },
+        features: [
+          'Allergen Detection',
+          'Personalized Meal Plans', 
+          'Nutrition Tracking',
+          'Expert Guidance',
+          'Safe Recipe Recommendations'
+        ],
       }
 
     case 'article':
