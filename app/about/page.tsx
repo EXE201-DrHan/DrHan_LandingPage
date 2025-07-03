@@ -4,16 +4,20 @@ import { generateMetadata } from "@/lib/seo"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
-  title: "About Us - Meet the Dr. Han Team",
-  description: "Learn about Nutri-Guardian and the Dr. Han team's mission to empower people with food allergies through education, support, and innovation for healthier, happier lives.",
+  title: "About Nutri-Guardian - Dr. Han Team's Food Allergy Management App",
+  description: "Learn about Nutri-Guardian by Dr. Han Team, the leading food allergy management app. Discover our mission to empower people with food allergies through innovative nutrition technology, expert guidance, and comprehensive allergy-safe eating solutions.",
   keywords: [
     "about nutri-guardian",
     "dr han team",
+    "nutri guardian creators",
     "food allergy experts",
-    "nutrition team",
+    "nutrition app developers",
     "allergy-friendly mission",
     "health innovation",
-    "food safety experts"
+    "food safety experts",
+    "nutri guardian team",
+    "about nutri guardian app",
+    "dr han nutri guardian"
   ],
   url: "/about",
   type: "website"
@@ -34,12 +38,12 @@ export default function AboutPage() {
       
       <div className="relative flex flex-col items-center justify-center min-h-screen py-20 px-4">
         <div className="max-w-2xl w-full bg-white/95 backdrop-blur-sm rounded-2xl shadow-lg p-10 text-center">
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">About Us</h1>
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">About Nutri-Guardian</h1>
           <h2 className="text-xl font-semibold mb-4 text-blue-600 flex items-center justify-center gap-2">
-            <Users className="w-6 h-6 text-blue-400" /> Dr. Han Team
+            <Users className="w-6 h-6 text-blue-400" /> Created by Dr. Han Team
           </h2>
           <p className="text-gray-700 mb-6 text-lg">
-            Welcome to Nutri-Guardian! We're passionate about making allergy-friendly eating accessible, safe, and enjoyable for everyone.
+            Welcome to Nutri-Guardian! We are Dr. Han Team, passionate food allergy experts dedicated to making allergy-friendly eating accessible, safe, and enjoyable for everyone through our innovative Nutri Guardian app.
           </p>
           <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-6">
             <div className="flex flex-col items-center">

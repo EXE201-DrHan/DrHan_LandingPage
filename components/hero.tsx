@@ -23,7 +23,8 @@ export function Hero() {
               />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              <span className="sr-only">Nutri-Guardian: </span>
+              <span className="text-yellow-400">Nutri-Guardian</span>
+              <br />
               Your Personal Ally
               <br />
               In <span className="text-yellow-400">Allergy-Friendly</span>
@@ -31,8 +32,12 @@ export function Hero() {
               <span className="text-yellow-400">Eating</span>
             </h1>
 
+            <h2 className="text-xl md:text-2xl font-semibold text-blue-200 mb-4">
+              By Dr. Han Team - The Leading Food Allergy Management App
+            </h2>
+
             <p className="text-gray-300 text-lg mb-8">
-              Nutritionist app for allergy sufferers - Get personalized meal plans and expert guidance for safe, healthy eating.
+              Download Nutri Guardian app for personalized nutrition plans, allergen detection, and expert guidance from Dr. Han Team. The most trusted food allergy management solution.
             </p>
 
             <a href="#" className="inline-block">
