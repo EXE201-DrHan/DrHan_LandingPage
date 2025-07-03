@@ -13,7 +13,7 @@ export interface SEOConfig {
   section?: string
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nutriguardian.vercel.app'
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://nutriguardian.xyz'
 const defaultImage = '/images/logo_better.png'
 
 export function generateMetadata({
@@ -179,6 +179,7 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
         foundingDate: '2024',
         keywords: 'nutri guardian, dr han team, food allergy experts, nutrition app developers',
         sameAs: [
+          'https://nutriguardian.xyz',
           'https://nutriguardian.vercel.app',
           'https://facebook.com/nutriguardian',
           'https://twitter.com/nutriguardian',
