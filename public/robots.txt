@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Important pages for Nutri-Guardian
-Sitemap: https://nutriguardian.vercel.app/sitemap.xml
+Sitemap: https://nutriguardian.xyz/sitemap.xml
 
 # Block admin and private areas
 Disallow: /api/
@@ -19,4 +19,4 @@ Allow: /favicon.ico
 Crawl-delay: 1
 
 # Additional sitemap locations
-Sitemap: https://nutriguardian.vercel.app/sitemap.xml
+Sitemap: https://nutriguardian.xyz/sitemap.xml
