@@ -58,3 +58,25 @@ export function FAQStructuredData({ questions }: FAQProps) {
 
   return <StructuredData data={faqData} />
 }
+
+export function LogoStructuredData() {
+  const logoData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Nutri-Guardian',
+    alternateName: ['Nutri Guardian', 'NutriGuardian'],
+    url: 'https://nutriguardian.xyz',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://nutriguardian.xyz/images/logo_better.png',
+      width: 512,
+      height: 512,
+      caption: 'Nutri-Guardian Logo',
+      contentUrl: 'https://nutriguardian.xyz/images/logo_better.png',
+      thumbnailUrl: 'https://nutriguardian.xyz/images/logo.png',
+      encodingFormat: 'image/png'
+    }
+  }
+
+  return <StructuredData data={logoData} />
+}

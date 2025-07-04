@@ -5,6 +5,7 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { ClientWrapper } from "@/components/client-wrapper"
 import { generateMetadata, defaultSEO, generateStructuredData } from "@/lib/seo"
+import { LogoStructuredData } from "@/components/structured-data"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,7 +20,20 @@ export const viewport: Viewport = {
   ],
 }
 
-export const metadata: Metadata = generateMetadata(defaultSEO)
+export const metadata: Metadata = {
+  ...generateMetadata(defaultSEO),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: '32x32' },
+      { url: '/images/logo.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' }
+    ],
+    apple: [
+      { url: '/images/logo.png', sizes: '180x180', type: 'image/png' }
+    ],
+    shortcut: '/favicon.ico'
+  }
+}
 
 export default function RootLayout({
   children,
@@ -32,7 +46,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Search Console Verification - Replace with your actual verification code */}
+        {/* Favicon and Icons for Search Results */}
+        <link rel="icon" href="/favicon.ico" sizes="32x32" />
+        <link rel="icon" href="/images/logo.png" sizes="192x192" type="image/png" />
+        <link rel="apple-touch-icon" href="/images/logo.png" sizes="180x180" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        
+        {/* Google Search Console Verification */}
         <meta name="google-site-verification" content="AI4lG_LLUdPfG8zJqGyKxXJqqP8qhmx5wGjDeWhvF90" />
         
         <script
@@ -47,6 +67,7 @@ export default function RootLayout({
             __html: JSON.stringify(organizationStructuredData),
           }}
         />
+        <LogoStructuredData />
       </head>
       <body className={inter.className}>
         <ClientWrapper>
