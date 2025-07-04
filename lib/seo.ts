@@ -153,9 +153,13 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
           logo: {
             '@type': 'ImageObject',
             url: `${baseUrl}/images/logo_better.png`,
+            width: 512,
+            height: 512,
+            caption: 'Nutri-Guardian Logo by Dr. Han Team'
           },
         },
         sameAs: [
+          'https://nutriguardian.xyz',
           'https://nutriguardian.vercel.app',
           'https://facebook.com/nutriguardian',
           'https://twitter.com/nutriguardian',
@@ -171,7 +175,13 @@ export function generateStructuredData(type: 'website' | 'article' | 'organizati
         alternateName: 'Nutri Guardian',
         description: 'Creators of Nutri-Guardian, the leading food allergy management app. Expert team providing nutritional guidance and allergy-safe eating solutions.',
         url: baseUrl,
-        logo: `${baseUrl}/images/logo_better.png`,
+        logo: {
+          '@type': 'ImageObject',
+          url: `${baseUrl}/images/logo_better.png`,
+          width: 512,
+          height: 512,
+          caption: 'Nutri-Guardian Logo - Food Allergy Management App by Dr. Han Team'
+        },
         founder: {
           '@type': 'Person',
           name: 'Dr. Han',
