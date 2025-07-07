@@ -36,6 +36,7 @@ export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
   const [showFullText, setShowFullText] = useState(false)
   const [imageLoading, setImageLoading] = useState(true)
   const [imageError, setImageError] = useState(false)
+  const [imageViewMode, setImageViewMode] = useState<'contain' | 'cover'>('contain')
 
   const { text: displayText, isTruncated } = facebookService.extractText(
     post.message || post.story || '', 
@@ -106,12 +107,13 @@ export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
       {/* Post Image */}
       {imageUrl && !imageError && (
         <div className="relative">
-          <div className="relative w-full h-64 md:h-80 bg-gray-100">
+          <div className="relative w-full bg-gray-100">
             <Image
               src={imageUrl}
               alt="Post image"
-              fill
-              className="object-cover"
+              width={600}
+              height={400}
+              className={`w-full h-auto object-${imageViewMode} max-h-96`}
               onLoad={() => setImageLoading(false)}
               onError={() => {
                 setImageLoading(false)
@@ -120,8 +122,18 @@ export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
               loading="lazy"
               unoptimized // Fallback for problematic Facebook URLs
             />
+            
+            {/* Image View Toggle Button */}
+            <button
+              onClick={() => setImageViewMode(imageViewMode === 'contain' ? 'cover' : 'contain')}
+              className="absolute top-2 right-2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white text-xs px-2 py-1 rounded transition-all"
+              title={imageViewMode === 'contain' ? 'Crop to fit' : 'Show full image'}
+            >
+              {imageViewMode === 'contain' ? '🔍' : '📐'}
+            </button>
+
             {imageLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+              <div className="absolute inset-0 flex items-center justify-center bg-gray-100 min-h-64">
                 <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
               </div>
             )}
