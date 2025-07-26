@@ -20,22 +20,22 @@ export function Header() {
 
           <nav className="hidden md:flex space-x-8">
             <Link href="/about" className={pathname === "/about" ? "text-blue-600 hover:text-blue-700 font-medium" : "text-gray-600 hover:text-gray-900"}>
-              About Us
+              Về Chúng Tôi
             </Link>
             <Link href="/education" className={pathname === "/education" ? "text-blue-600 hover:text-blue-700 font-medium" : "text-gray-600 hover:text-gray-900"}>
-              Education
+              Giáo Dục
             </Link>
             <Link href="/update" className={pathname === "/update" ? "text-blue-600 hover:text-blue-700 font-medium" : "text-gray-600 hover:text-gray-900"}>
-              Update
+              Cập Nhật
             </Link>
           </nav>
 
           <div className="flex items-center space-x-4">
             <Link href="/register" className="text-gray-600 hover:text-gray-900">
-              Sign Up
+              Đăng Ký
             </Link>
             <Link href="/login">
-              <Button className="bg-blue-600 hover:bg-blue-700">Log In</Button>
+              <Button className="bg-blue-600 hover:bg-blue-700">Đăng Nhập</Button>
             </Link>
           </div>
         </div>

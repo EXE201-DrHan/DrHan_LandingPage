@@ -8,19 +8,19 @@ import { FacebookPostComponent } from '@/components/facebook-post'
 
 const staticAnnouncements = [
   {
-    title: "Welcome to Nutri-Guardian!",
+    title: "Chào mừng đến với Nutri-Guardian!",
     date: "2025-06-01",
-    description: "We are excited to launch our new platform for allergy-friendly eating and food allergy management.",
+    description: "Chúng tôi rất hào hứng khi ra mắt nền tảng mới cho việc ăn uống thân thiện với dị ứng và quản lý dị ứng thực phẩm.",
   },
   {
-    title: "New Article Series: Allergy Safety",
+    title: "Loạt Bài Viết Mới: An Toàn Dị Ứng",
     date: "2025-06-05",
-    description: "Check out our latest articles on how to stay safe and healthy with food allergies.",
+    description: "Hãy xem các bài viết mới nhất của chúng tôi về cách giữ an toàn và khỏe mạnh với dị ứng thực phẩm.",
   },
   {
-    title: "Community Forum Coming Soon",
+    title: "Diễn Đàn Cộng Đồng Sắp Ra Mắt",
     date: "2025-06-10",
-    description: "We're building a space for you to connect, share, and support each other. Stay tuned!",
+    description: "Chúng tôi đang xây dựng một không gian để bạn kết nối, chia sẻ và hỗ trợ lẫn nhau. Hãy theo dõi!",
   },
 ];
 
@@ -43,7 +43,7 @@ export default function UpdatePage() {
       }
     } catch (err) {
       console.error('Error fetching Facebook posts:', err)
-      setError('Unable to load latest updates. Please try again later.')
+      setError('Không thể tải cập nhật mới nhất. Vui lòng thử lại sau.')
       setShowStaticPosts(true) // Fallback to static posts on error
     } finally {
       setLoading(false)
@@ -65,9 +65,9 @@ export default function UpdatePage() {
         {/* Header */}
         <div className="text-center mb-8">
           <Megaphone className="w-16 h-16 text-blue-400 mb-4 mx-auto" />
-          <h1 className="text-4xl font-bold mb-4 text-gray-900">Latest Updates</h1>
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">Cập Nhật Mới Nhất</h1>
           <p className="text-gray-600 max-w-lg mx-auto">
-            Stay informed with the latest news, tips, and announcements from the Nutri-Guardian community.
+            Luôn cập nhật với những tin tức, mẹo và thông báo mới nhất từ cộng đồng Nutri-Guardian.
           </p>
         </div>
 
@@ -75,7 +75,7 @@ export default function UpdatePage() {
         {loading && (
           <div className="flex items-center justify-center py-12">
             <Loader2 className="w-8 h-8 animate-spin text-blue-500 mr-3" />
-            <span className="text-gray-600">Loading latest updates...</span>
+            <span className="text-gray-600">Đang tải cập nhật mới nhất...</span>
           </div>
         )}
 
@@ -84,7 +84,7 @@ export default function UpdatePage() {
           <div className="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
             <div className="flex items-center mb-4">
               <AlertCircle className="w-6 h-6 text-red-500 mr-3" />
-              <h3 className="text-lg font-semibold text-red-800">Connection Issue</h3>
+              <h3 className="text-lg font-semibold text-red-800">Vấn Đề Kết Nối</h3>
             </div>
             <p className="text-red-700 mb-4">{error}</p>
             <button
@@ -92,7 +92,7 @@ export default function UpdatePage() {
               className="flex items-center px-4 py-2 bg-red-100 hover:bg-red-200 text-red-800 rounded-md transition-colors"
             >
               <RefreshCw className="w-4 h-4 mr-2" />
-              Try Again
+              Thử Lại
             </button>
           </div>
         )}
@@ -112,7 +112,7 @@ export default function UpdatePage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium"
               >
-                View More on Facebook
+                Xem Thêm Trên Facebook
                 <ExternalLink className="w-4 h-4 ml-2" />
               </a>
             </div>
@@ -126,16 +126,16 @@ export default function UpdatePage() {
               <div className="flex items-center">
                 <AlertCircle className="w-5 h-5 text-amber-500 mr-2" />
                 <span className="text-amber-800 text-sm">
-                  Showing local announcements. Visit our{' '}
+                  Hiển thị thông báo nội bộ. Truy cập{' '}
                   <a 
                     href="https://www.facebook.com/profile.php?id=61576751584978"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:no-underline"
                   >
-                    Facebook page
+                    trang Facebook
                   </a>{' '}
-                  for the latest updates.
+                  của chúng tôi để có cập nhật mới nhất.
                 </span>
               </div>
             </div>
