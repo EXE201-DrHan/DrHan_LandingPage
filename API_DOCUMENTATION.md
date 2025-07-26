@@ -42,7 +42,7 @@ Register a new user account.
   "error": "Error message here"
 }
 ```
-
+lmao
 ### 2. User Login
 **POST** `/api/auth/login`
 
