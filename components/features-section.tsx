@@ -4,26 +4,26 @@ export function FeaturesSection() {
   const features = [
     {
       icon: Utensils,
-      title: "Food suggestion",
-      description: "Provides meal plans and diet suggestions suitable for allergy conditions and limitations.",
+      title: "Gợi ý thực phẩm",
+      description: "Cung cấp kế hoạch ăn uống và gợi ý chế độ ăn phù hợp với tình trạng dị ứng và các hạn chế.",
     },
     {
       icon: Users,
-      title: "Membership",
+      title: "Thành viên",
       description:
-        "Offers membership packages to access all special features including meal plans for a day or a week, storing history for easy tracking, and making suggestions in mixed suggestions.",
+        "Cung cấp các gói thành viên để truy cập tất cả các tính năng đặc biệt bao gồm kế hoạch ăn uống cho một ngày hoặc một tuần, lưu trữ lịch sử để theo dõi dễ dàng, và đưa ra gợi ý trong các gợi ý hỗn hợp.",
     },
     {
       icon: TestTube,
-      title: "Allergy test information",
+      title: "Thông tin xét nghiệm dị ứng",
       description:
-        "Provides test information on how to test for allergies at home or commercial locations for accurate testing.",
+        "Cung cấp thông tin xét nghiệm về cách kiểm tra dị ứng tại nhà hoặc các địa điểm thương mại để xét nghiệm chính xác.",
     },
     {
       icon: Handshake,
-      title: "Collaboration",
+      title: "Hợp tác",
       description:
-        "We have most popular restaurants and medications from hospitals to create a diverse and comprehensive menu.",
+        "Chúng tôi có các nhà hàng phổ biến nhất và thuốc từ bệnh viện để tạo ra một thực đơn đa dạng và toàn diện.",
     },
   ]
 
@@ -31,7 +31,7 @@ export function FeaturesSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nutri-Guardian would be your best partner!!</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Nutri-Guardian sẽ là đối tác tốt nhất của bạn!!</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

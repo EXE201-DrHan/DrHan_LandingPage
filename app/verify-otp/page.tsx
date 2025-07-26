@@ -46,19 +46,19 @@ export default function VerifyOtpPage() {
     setSuccessMessage("");
 
     if (!otpCode.trim()) {
-      setErrors(["Please enter the OTP code"]);
+      setErrors(["Vui lòng nhập mã OTP"]);
       setIsLoading(false);
       return;
     }
 
     if (otpCode.length !== 6) {
-      setErrors(["OTP code must be 6 digits"]);
+      setErrors(["Mã OTP phải có 6 chữ số"]);
       setIsLoading(false);
       return;
     }
 
     if (!userId) {
-      setErrors(["User ID not found. Please register again."]);
+      setErrors(["Không tìm thấy ID người dùng. Vui lòng đăng ký lại."]);
       setIsLoading(false);
       return;
     }
@@ -96,7 +96,7 @@ export default function VerifyOtpPage() {
         if (data.isSucceeded !== undefined) {
           // AppResponse<T> format
           if (data.isSucceeded && data.data?.isVerified) {
-            setSuccessMessage("Email verified successfully! Redirecting to login...");
+            setSuccessMessage("Email đã được xác minh thành công! Đang chuyển hướng đến đăng nhập...");
             
             // Clear stored data
             localStorage.removeItem('otpEmail');
@@ -118,11 +118,11 @@ export default function VerifyOtpPage() {
                 }
               });
             }
-            setErrors(errorMessages.length > 0 ? errorMessages : ["OTP verification failed"]);
+            setErrors(errorMessages.length > 0 ? errorMessages : ["Xác minh OTP thất bại"]);
           }
         } else {
           // Direct response format
-          setSuccessMessage("Email verified successfully! Redirecting to login...");
+          setSuccessMessage("Email đã được xác minh thành công! Đang chuyển hướng đến đăng nhập...");
           
           // Clear stored data
           localStorage.removeItem('otpEmail');
@@ -192,14 +192,14 @@ export default function VerifyOtpPage() {
             </div>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Verify Your Email
+            Xác Minh Email Của Bạn
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            We've sent a 6-digit code to <strong>{email}</strong>
+            Chúng tôi đã gửi mã 6 chữ số tới <strong>{email}</strong>
           </p>
           {fullName && (
             <p className="mt-1 text-center text-sm text-gray-500">
-              Welcome, {fullName}!
+              Chào mừng, {fullName}!
             </p>
           )}
         </div>
@@ -238,7 +238,7 @@ export default function VerifyOtpPage() {
             {/* OTP Input */}
             <div>
               <label htmlFor="otpCode" className="block text-sm font-medium text-gray-700 text-center">
-                Enter 6-digit code
+                Nhập mã 6 chữ số
               </label>
               <Input
                 id="otpCode"
@@ -262,16 +262,16 @@ export default function VerifyOtpPage() {
                 disabled={isLoading || otpCode.length !== 6}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-md transition duration-200"
               >
-                {isLoading ? "Verifying..." : "Verify Email"}
+                {isLoading ? "Đang xác minh..." : "Xác Minh Email"}
               </Button>
             </div>
 
             {/* Back to Registration */}
             <div className="text-center">
               <p className="text-sm text-gray-600">
-                Need to change your email?{" "}
+                Cần thay đổi email của bạn?{" "}
                 <Link href="/register" className="font-medium text-blue-600 hover:text-blue-500">
-                  Back to Registration
+                  Trở về Đăng Ký
                 </Link>
               </p>
             </div>

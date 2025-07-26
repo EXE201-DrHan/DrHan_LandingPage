@@ -19,56 +19,56 @@ export function Footer() {
             </div>
 
             <div className="mb-6">
-              <p className="text-gray-600 mb-4">Updates right to your inbox</p>
+              <p className="text-gray-600 mb-4">Cập nhật trực tiếp đến hộp thư của bạn</p>
               <div className="flex space-x-2">
-                <Input type="email" placeholder="Email Address" className="flex-1" />
-                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">Send</Button>
+                <Input type="email" placeholder="Địa chỉ Email" className="flex-1" />
+                <Button className="bg-yellow-500 hover:bg-yellow-600 text-black">Gửi</Button>
               </div>
             </div>
 
             <p className="text-sm text-gray-500">© NUTRI-GUARDIAN 2025</p>
             <div className="flex space-x-4 mt-4">
               <Link href="#" className="text-gray-500 hover:text-gray-700">
-                Privacy policy
+                Chính sách bảo mật
               </Link>
               <Link href="#" className="text-gray-500 hover:text-gray-700">
-                Terms of use
+                Điều khoản sử dụng
               </Link>
             </div>
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Our goal</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">Mục tiêu của chúng tôi</h3>
             <ul className="space-y-2 text-gray-600">
               <li>
                 <Link href="#" className="hover:text-gray-900">
-                  FAQ
+                  Câu hỏi thường gặp
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-gray-900">
-                  Contact
+                  Liên hệ
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-900 mb-4">Allergy</h3>
+            <h3 className="font-semibold text-gray-900 mb-4">Dị ứng</h3>
             <ul className="space-y-2 text-gray-600">
               <li>
                 <Link href="#" className="hover:text-gray-900">
-                  Treatments
+                  Điều trị
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-gray-900">
-                  Health
+                  Sức khỏe
                 </Link>
               </li>
               <li>
                 <Link href="#" className="hover:text-gray-900">
-                  Information
+                  Thông tin
                 </Link>
               </li>
             </ul>
