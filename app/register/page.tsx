@@ -107,13 +107,13 @@ export default function RegisterPage() {
 
     // Validate form data before submission
     if (!formData.email || !formData.password || !formData.fullName || !formData.dateOfBirth || !formData.gender) {
-      setErrors(["Please fill in all required fields"]);
+      setErrors(["Vui lòng điền vào tất cả các trường bắt buộc"]);
       setIsLoading(false);
       return;
     }
 
     if (formData.password !== formData.confirmPassword) {
-      setErrors(["Passwords do not match"]);
+      setErrors(["Mật khẩu không khớp"]);
       setIsLoading(false);
       return;
     }
@@ -194,14 +194,14 @@ export default function RegisterPage() {
         } else if (data.message) {
           errorMessages.push(data.message);
         } else {
-          errorMessages.push("Registration failed. Please try again.");
+          errorMessages.push("Đăng ký thất bại. Vui lòng thử lại.");
         }
         
         setErrors(errorMessages);
       }
     } catch (error) {
       console.error("Registration error:", error);
-      setErrors(["Network error. Please try again."]);
+      setErrors(["Lỗi mạng. Vui lòng thử lại."]);
     } finally {
       setIsLoading(false);
     }
@@ -217,10 +217,10 @@ export default function RegisterPage() {
             </div>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Create your account
+            Tạo tài khoản của bạn
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Join Nutri-Guardian today
+            Tham gia Nutri-Guardian ngay hôm nay
           </p>
         </div>
 
@@ -234,10 +234,10 @@ export default function RegisterPage() {
                     <div className="text-blue-600 mr-3">🔔</div>
                     <div>
                       <h3 className="text-sm font-medium text-blue-800">
-                        Enable Push Notifications
+                        Bật Thông Báo Đẩy
                       </h3>
                       <p className="text-xs text-blue-600 mt-1">
-                        Get notified about your account updates and important information
+                        Nhận thông báo về cập nhật tài khoản và thông tin quan trọng
                       </p>
                     </div>
                   </div>
@@ -246,7 +246,7 @@ export default function RegisterPage() {
                     onClick={enablePushNotifications}
                     className="bg-blue-600 hover:bg-blue-700 text-white text-xs px-3 py-1"
                   >
-                    Enable
+                    Bật
                   </Button>
                 </div>
               </div>
@@ -259,10 +259,10 @@ export default function RegisterPage() {
                   <div className="text-green-600 mr-3">✅</div>
                   <div>
                     <h3 className="text-sm font-medium text-green-800">
-                      Push Notifications Enabled
+                      Thông Báo Đẩy Đã Được Bật
                     </h3>
                     <p className="text-xs text-green-600 mt-1">
-                      You'll receive notifications about your account updates
+                      Bạn sẽ nhận được thông báo về cập nhật tài khoản
                     </p>
                   </div>
                 </div>
@@ -283,7 +283,7 @@ export default function RegisterPage() {
             {/* Full Name */}
             <div>
               <label htmlFor="fullName" className="block text-sm font-medium text-gray-700">
-                Full Name
+                Họ và Tên
               </label>
               <Input
                 id="fullName"
@@ -293,14 +293,14 @@ export default function RegisterPage() {
                 value={formData.fullName}
                 onChange={handleChange}
                 className="mt-1"
-                placeholder="Enter your full name"
+                placeholder="Nhập họ và tên của bạn"
               />
             </div>
 
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email Address
+                Địa chỉ Email
               </label>
               <Input
                 id="email"
@@ -310,14 +310,14 @@ export default function RegisterPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className="mt-1"
-                placeholder="Enter your email"
+                placeholder="Nhập email của bạn"
               />
             </div>
 
             {/* Date of Birth */}
             <div>
               <label htmlFor="dateOfBirth" className="block text-sm font-medium text-gray-700">
-                Date of Birth
+                Ngày Sinh
               </label>
               <Input
                 id="dateOfBirth"
@@ -333,7 +333,7 @@ export default function RegisterPage() {
             {/* Gender */}
             <div>
               <label htmlFor="gender" className="block text-sm font-medium text-gray-700">
-                Gender
+                Giới Tính
               </label>
               <select
                 id="gender"
@@ -343,18 +343,18 @@ export default function RegisterPage() {
                 onChange={handleChange}
                 className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
               >
-                <option value="">Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-                <option value="prefer-not-to-say">Prefer not to say</option>
+                <option value="">Chọn giới tính của bạn</option>
+                <option value="male">Nam</option>
+                <option value="female">Nữ</option>
+                <option value="other">Khác</option>
+                <option value="prefer-not-to-say">Không muốn tiết lộ</option>
               </select>
             </div>
 
             {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+                Mật Khẩu
               </label>
               <Input
                 id="password"
@@ -364,18 +364,18 @@ export default function RegisterPage() {
                 value={formData.password}
                 onChange={handleChange}
                 className="mt-1"
-                placeholder="Enter your password"
+                placeholder="Nhập mật khẩu của bạn"
                 minLength={6}
               />
               <p className="mt-1 text-xs text-gray-500">
-                Password must be at least 6 characters long
+                Mật khẩu phải có ít nhất 6 ký tự
               </p>
             </div>
 
             {/* Confirm Password */}
             <div>
               <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-                Confirm Password
+                Xác Nhận Mật Khẩu
               </label>
               <Input
                 id="confirmPassword"
@@ -385,7 +385,7 @@ export default function RegisterPage() {
                 value={formData.confirmPassword}
                 onChange={handleChange}
                 className="mt-1"
-                placeholder="Confirm your password"
+                placeholder="Xác nhận mật khẩu của bạn"
                 minLength={6}
               />
             </div>
@@ -397,16 +397,16 @@ export default function RegisterPage() {
                 disabled={isLoading}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200"
               >
-                {isLoading ? "Creating Account..." : "Create Account"}
+                {isLoading ? "Đang Tạo Tài Khoản..." : "Tạo Tài Khoản"}
               </Button>
             </div>
 
             {/* Login Link */}
             <div className="text-center">
               <p className="text-sm text-gray-600">
-                Already have an account?{" "}
+                Đã có tài khoản?{" "}
                 <Link href="/login" className="font-medium text-blue-600 hover:text-blue-500">
-                  Sign in here
+                  Đăng nhập tại đây
                 </Link>
               </p>
             </div>

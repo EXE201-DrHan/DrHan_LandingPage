@@ -12,32 +12,32 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: 1,
-    title: "Understanding Common Allergies: A Comprehensive Guide",
+    title: "Hiểu Về Dị Ứng Phổ Biến: Hướng Dẫn Toàn Diện",
     excerpt:
-      "Learn about the most common types of allergies, their symptoms, and how to manage them effectively in your daily life.",
+      "Tìm hiểu về các loại dị ứng phổ biến nhất, triệu chứng của chúng và cách quản lý hiệu quả trong cuộc sống hàng ngày.",
     author: "Dr. Sarah Johnson",
-    date: "March 15, 2025",
-    category: "Feature",
+    date: "15 tháng 3, 2025",
+    category: "Nổi Bật",
     image: undefined,
   },
   {
     id: 2,
-    title: "Managing Seasonal Allergies: Tips and Tricks",
+    title: "Quản Lý Dị Ứng Theo Mùa: Mẹo và Thủ Thuật",
     excerpt:
-      "Practical strategies to cope with seasonal allergies and maintain your quality of life.",
+      "Các chiến lược thực tế để đối phó với dị ứng theo mùa và duy trì chất lượng cuộc sống.",
     author: "Dr. Sarah Johnson",
-    date: "March 15, 2025",
-    category: "Seasonal Allergy",
+    date: "15 tháng 3, 2025",
+    category: "Dị Ứng Theo Mùa",
     image: undefined,
   },
   {
     id: 3,
-    title: "Food Allergy Safety: What You Need to Know",
+    title: "An Toàn Dị Ứng Thực Phẩm: Những Điều Bạn Cần Biết",
     excerpt:
-      "Essential information about food allergies, cross-contamination, and safety measures.",
+      "Thông tin thiết yếu về dị ứng thực phẩm, nhiễm chéo và các biện pháp an toàn.",
     author: "Dr. Sarah Johnson",
-    date: "March 15, 2025",
-    category: "Food Allergies",
+    date: "15 tháng 3, 2025",
+    category: "Dị Ứng Thực Phẩm",
     image: undefined,
   },
 ]; 

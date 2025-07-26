@@ -14,28 +14,51 @@ interface FacebookPostComponentProps {
 function getPostImageUrl(post: FacebookPost): string | null {
   // Priority: full_picture > attachments > picture
   if (post.full_picture) {
-    return post.full_picture
+    return cleanFacebookImageUrl(post.full_picture)
   }
   
   if (post.attachments?.data && post.attachments.data.length > 0) {
     for (const attachment of post.attachments.data) {
       if (attachment.type === 'photo' && attachment.media?.image?.src) {
-        return attachment.media.image.src
+        return cleanFacebookImageUrl(attachment.media.image.src)
       }
     }
   }
   
   if (post.picture) {
-    return post.picture
+    return cleanFacebookImageUrl(post.picture)
   }
   
   return null
+}
+
+// Helper function to clean Facebook image URLs
+function cleanFacebookImageUrl(url: string): string {
+  try {
+    // Remove unnecessary parameters that might cause issues
+    const cleanUrl = url.split('?')[0]
+    return cleanUrl
+  } catch (error) {
+    console.warn('Error cleaning Facebook image URL:', error)
+    return url
+  }
+}
+
+// Helper function to get proxied image URL for better loading
+function getProxiedImageUrl(url: string): string {
+  try {
+    return `/api/proxy-image?url=${encodeURIComponent(url)}`
+  } catch (error) {
+    console.warn('Error creating proxy URL:', error)
+    return url
+  }
 }
 
 export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
   const [showFullText, setShowFullText] = useState(false)
   const [imageLoading, setImageLoading] = useState(true)
   const [imageError, setImageError] = useState(false)
+  const [useProxy, setUseProxy] = useState(false)
   const [imageViewMode, setImageViewMode] = useState<'contain' | 'cover'>('contain')
 
   const { text: displayText, isTruncated } = facebookService.extractText(
@@ -44,7 +67,22 @@ export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
   )
 
   const formattedDate = facebookService.formatDate(post.created_time)
-  const imageUrl = getPostImageUrl(post)
+  const rawImageUrl = getPostImageUrl(post)
+  const imageUrl = rawImageUrl ? (useProxy ? getProxiedImageUrl(rawImageUrl) : rawImageUrl) : null
+
+  const handleImageError = () => {
+    console.log('Lỗi tải hình ảnh Facebook:', imageUrl)
+    setImageLoading(false)
+    
+    if (!useProxy && rawImageUrl) {
+      // Try with proxy if direct URL failed
+      console.log('Thử sử dụng proxy cho hình ảnh...')
+      setUseProxy(true)
+      setImageLoading(true)
+    } else {
+      setImageError(true)
+    }
+  }
 
   return (
     <div className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden mb-4">
@@ -104,80 +142,7 @@ export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
         </div>
       )}
 
-      {/* Post Image */}
-      {imageUrl && !imageError && (
-        <div className="relative">
-          <div className="relative w-full bg-gray-100">
-            <Image
-              src={imageUrl}
-              alt="Post image"
-              width={600}
-              height={400}
-              className={`w-full h-auto object-${imageViewMode} max-h-96`}
-              onLoad={() => setImageLoading(false)}
-              onError={() => {
-                setImageLoading(false)
-                setImageError(true)
-              }}
-              loading="lazy"
-              unoptimized // Fallback for problematic Facebook URLs
-            />
-            
-            {/* Image View Toggle Button */}
-            <button
-              onClick={() => setImageViewMode(imageViewMode === 'contain' ? 'cover' : 'contain')}
-              className="absolute top-2 right-2 bg-black bg-opacity-50 hover:bg-opacity-70 text-white text-xs px-2 py-1 rounded transition-all"
-              title={imageViewMode === 'contain' ? 'Crop to fit' : 'Show full image'}
-            >
-              {imageViewMode === 'contain' ? '🔍' : '📐'}
-            </button>
 
-            {imageLoading && (
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-100 min-h-64">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-              </div>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* Post Attachments */}
-      {post.attachments?.data && post.attachments.data.length > 0 && (
-        <div className="border-t border-gray-100">
-          {post.attachments.data.map((attachment, index) => (
-            <div key={index} className="p-4 border-b border-gray-50 last:border-b-0">
-              {attachment.type === 'photo' && attachment.media?.image && (
-                <div className="relative w-full h-48 bg-gray-100 rounded-lg overflow-hidden">
-                  <Image
-                    src={attachment.media.image.src}
-                    alt="Attachment image"
-                    fill
-                    className="object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              )}
-              {attachment.title && (
-                <h4 className="font-semibold text-gray-900 mt-2">{attachment.title}</h4>
-              )}
-              {attachment.description && (
-                <p className="text-gray-600 text-sm mt-1">{attachment.description}</p>
-              )}
-              {attachment.url && (
-                <a
-                  href={attachment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-700 text-sm mt-2 inline-flex items-center"
-                >
-                  <ExternalLink className="w-3 h-3 mr-1" />
-                  View Link
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
 
       {/* Post Stats */}
       <div className="px-4 py-3 border-t border-gray-100">
@@ -215,7 +180,7 @@ export function FacebookPostComponent({ post }: FacebookPostComponentProps) {
             className="flex items-center justify-center space-x-2 px-4 py-2 rounded-lg hover:bg-gray-100 transition-colors text-gray-600 hover:text-blue-600 font-medium text-sm flex-1"
           >
             <ExternalLink className="w-4 h-4" />
-            <span>View on Facebook</span>
+            <span>Chuyển tiếp tới Facebook</span>
           </a>
         </div>
       </div>

@@ -7,47 +7,47 @@ import { generateMetadata } from "@/lib/seo"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = generateMetadata({
-  title: "Food Allergy Education Hub - Expert Articles & Resources",
-  description: "Comprehensive food allergy education center with expert articles on common allergies, seafood allergies, milk allergies, symptoms, treatments, and safety tips for allergy sufferers.",
+  title: "Trung Tâm Giáo Dục Dị Ứng Thực Phẩm - Bài Viết & Tài Nguyên Chuyên Gia",
+  description: "Trung tâm giáo dục dị ứng thực phẩm toàn diện với các bài viết chuyên gia về dị ứng phổ biến, dị ứng hải sản, dị ứng sữa, triệu chứng, điều trị và mẹo an toàn cho người bị dị ứng.",
   keywords: [
-    "food allergy education",
-    "allergy articles",
-    "food safety education",
-    "allergy symptoms",
-    "allergy treatment",
-    "seafood allergy",
-    "milk allergy",
-    "common food allergies",
-    "allergy resources",
-    "nutrition education"
+    "giáo dục dị ứng thực phẩm",
+    "bài viết dị ứng",
+    "giáo dục an toàn thực phẩm",
+    "triệu chứng dị ứng",
+    "điều trị dị ứng",
+    "dị ứng hải sản",
+    "dị ứng sữa",
+    "dị ứng thực phẩm phổ biến",
+    "tài nguyên dị ứng",
+    "giáo dục dinh dưỡng"
   ],
   url: "/education",
   type: "website"
 })
 
 const categories = [
-  { name: "Common food allergy", count: 24 },
-  { name: "Seafood allergy", count: 12 },
-  { name: "Milk allergy", count: 12 },
-  { name: "Skin symptoms", count: 12 },
-  { name: "Treatment", count: 12 },
-  { name: "Education", count: 12 },
+  { name: "Dị ứng thực phẩm phổ biến", count: 24 },
+  { name: "Dị ứng hải sản", count: 12 },
+  { name: "Dị ứng sữa", count: 12 },
+  { name: "Triệu chứng da", count: 12 },
+  { name: "Điều trị", count: 12 },
+  { name: "Giáo dục", count: 12 },
 ]
 
 const popularArticles = [
   {
-    title: "Benefit of morning coffee.",
-    date: "March, 12, 2025",
+    title: "Lợi ích của cà phê buổi sáng.",
+    date: "12 tháng 3, 2025",
     image: undefined, // Replace with your real image
   },
   {
-    title: "Asian and milk.",
-    date: "March, 12, 2025",
+    title: "Người châu Á và sữa.",
+    date: "12 tháng 3, 2025",
     image: undefined, // Replace with your real image
   },
   {
-    title: "How to handle food allergies",
-    date: "March, 12, 2025",
+    title: "Cách xử lý dị ứng thực phẩm",
+    date: "12 tháng 3, 2025",
     image: undefined, // Replace with your real image
   },
 ]
@@ -58,9 +58,9 @@ export default function EducationPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Allergy Education Articles</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">Bài Viết Giáo Dục Dị Ứng</h1>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Stay informed with our comprehensive collection of articles about allergies, treatments, and prevention strategies.
+            Luôn cập nhật thông tin với bộ sưu tập toàn diện các bài viết về dị ứng, điều trị và chiến lược phòng ngừa của chúng tôi.
           </p>
         </div>
 
@@ -112,12 +112,12 @@ export default function EducationPage() {
           <aside className="lg:col-span-1 space-y-8">
             {/* Search Bar */}
             <div className="bg-white rounded-xl p-4 shadow flex items-center">
-              <Input placeholder="Search article..." className="w-full" />
+              <Input placeholder="Tìm kiếm bài viết..." className="w-full" />
             </div>
 
             {/* Categories */}
             <div className="bg-white rounded-xl p-6 shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">CATEGORIES</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">DANH MỤC</h3>
               <div className="space-y-3">
                 {categories.map((category, idx) => (
                   <div key={idx} className="flex items-center justify-between">
@@ -130,7 +130,7 @@ export default function EducationPage() {
 
             {/* Popular Articles */}
             <div className="bg-white rounded-xl p-6 shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">POPULAR ARTICLES</h3>
+              <h3 className="text-lg font-semibold text-gray-900 mb-4">BÀI VIẾT PHỔ BIẾN</h3>
               <div className="space-y-4">
                 {popularArticles.map((article, idx) => (
                   <div key={idx} className="flex space-x-3 items-center">

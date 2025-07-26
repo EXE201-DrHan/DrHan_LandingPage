@@ -7,9 +7,9 @@ export function TestimonialSection() {
             <div className="text-6xl text-purple-300 mb-4">"</div>
 
             <blockquote className="text-xl text-gray-800 leading-relaxed mb-8">
-              I have been one of the earliest users to try the Nutri-Guardian App, and it feel incredible. I love the
-              versatile choices of meal plans on my condition of food allergy, really help me reduce the time to decide
-              what to eat
+              Tôi đã là một trong những người dùng đầu tiên thử Ứng dụng Nutri-Guardian, và cảm giác thật tuyệt vời. Tôi yêu thích 
+              sự lựa chọn đa dạng của các kế hoạch ăn uống dựa trên tình trạng dị ứng thực phẩm của mình, thực sự giúp tôi giảm thời gian 
+              quyết định nên ăn gì
             </blockquote>
 
             <div className="flex items-center justify-between">

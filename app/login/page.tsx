@@ -55,11 +55,11 @@ export default function LoginPage() {
         router.push("/"); // Redirect to home page
       } else {
         // Login failed
-        setErrors([data.error || "Login failed"]);
+        setErrors([data.error || "Đăng nhập thất bại"]);
       }
     } catch (error) {
       console.error("Login error:", error);
-      setErrors(["Network error. Please try again."]);
+      setErrors(["Lỗi mạng. Vui lòng thử lại."]);
     } finally {
       setIsLoading(false);
     }
@@ -75,10 +75,10 @@ export default function LoginPage() {
             </div>
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Sign in to your account
+            Đăng nhập vào tài khoản của bạn
           </h2>
           <p className="mt-2 text-center text-sm text-gray-600">
-            Welcome back to Nutri-Guardian
+            Chào mừng trở lại với Nutri-Guardian
           </p>
         </div>
 
@@ -98,7 +98,7 @@ export default function LoginPage() {
             {/* Email */}
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email Address
+                Địa chỉ Email
               </label>
               <Input
                 id="email"
@@ -108,14 +108,14 @@ export default function LoginPage() {
                 value={formData.email}
                 onChange={handleChange}
                 className="mt-1"
-                placeholder="Enter your email"
+                placeholder="Nhập email của bạn"
               />
             </div>
 
             {/* Password */}
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+                Mật khẩu
               </label>
               <Input
                 id="password"
@@ -125,7 +125,7 @@ export default function LoginPage() {
                 value={formData.password}
                 onChange={handleChange}
                 className="mt-1"
-                placeholder="Enter your password"
+                placeholder="Nhập mật khẩu của bạn"
               />
             </div>
 
@@ -136,16 +136,16 @@ export default function LoginPage() {
                 disabled={isLoading}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-200"
               >
-                {isLoading ? "Signing in..." : "Sign In"}
+                {isLoading ? "Đang đăng nhập..." : "Đăng Nhập"}
               </Button>
             </div>
 
             {/* Register Link */}
             <div className="text-center">
               <p className="text-sm text-gray-600">
-                Don't have an account?{" "}
+                Chưa có tài khoản?{" "}
                 <Link href="/register" className="font-medium text-blue-600 hover:text-blue-500">
-                  Sign up here
+                  Đăng ký tại đây
                 </Link>
               </p>
             </div>

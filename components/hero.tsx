@@ -23,32 +23,29 @@ export function Hero() {
               />
             </div>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              <span className="text-yellow-400">Nutri-Guardian</span>
+              Đồng Hành Cùng Bạn
               <br />
-              Your Personal Ally
+              Tránh Xa <span className="text-yellow-400">Dị Ứng Thực Phẩm</span>
               <br />
-              In <span className="text-yellow-400">Allergy-Friendly</span>
-              <br />
-              <span className="text-yellow-400">Eating</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl font-semibold text-blue-200 mb-4">
-              By Dr. Han Team - The Leading Food Allergy Management App
+              Bởi Team Dr. Han - Ứng Dụng Quản Lý Dị Ứng Thực Phẩm Hàng Đầu
             </h2>
 
             <p className="text-gray-300 text-lg mb-8">
-              Download Nutri Guardian app for personalized nutrition plans, allergen detection, and expert guidance from Dr. Han Team. The most trusted food allergy management solution.
+              Tải xuống ứng dụng Nutri Guardian để có kế hoạch dinh dưỡng cá nhân hóa, phát hiện chất gây dị ứng và hướng dẫn chuyên gia từ Đội Dr. Han. Giải pháp quản lý dị ứng thực phẩm đáng tin cậy nhất.
             </p>
 
-            <a href="#" className="inline-block">
+            <a href="#" className="inline-block bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-lg hover:shadow-xl transition-shadow">
               <img
-                src="/images/chplay.png"
-                alt="Download on CH Play"
+                src="/images/apk-icon.png"
+                alt="Tải APK cho android"
                 className="w-[200px] md:w-[240px] h-auto"
               />
             </a>
 
-            <p className="text-gray-400 text-sm mt-4">Now available on CH Play</p>
+            <p className="text-gray-400 text-sm mt-4">Hiện có thể tải bản APK cho Android</p>
           </div>
 
           <div className="hidden lg:block">
@@ -58,7 +55,7 @@ export function Hero() {
                   <span className="text-white text-xs font-bold">CU</span>
                 </div>
                 <div>
-                  <p className="text-white font-medium">Call Us</p>
+                  <p className="text-white font-medium">Gọi Cho Chúng Tôi</p>
                   <p className="text-gray-300 text-sm">0903 744 380</p>
                 </div>
               </div>

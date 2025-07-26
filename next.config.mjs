@@ -51,7 +51,25 @@ const nextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'external.*.fbcdn.net',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'lookaside.fbsbx.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'graph.facebook.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.facebook.com',
         port: '',
         pathname: '/**',
       },
