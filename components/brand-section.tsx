@@ -9,7 +9,7 @@ export function BrandSection() {
             Tại Sao Chọn Nutri-Guardian?
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Nutri-Guardian của Đội Dr. Han là ứng dụng quản lý dị ứng thực phẩm đáng tin cậy nhất, 
+            Nutri-Guardian của Team Dr. Han là ứng dụng quản lý dị ứng thực phẩm đáng tin cậy nhất, 
             giúp hàng nghìn người dùng ăn uống an toàn và sống khỏe mạnh hơn.
           </p>
         </div>

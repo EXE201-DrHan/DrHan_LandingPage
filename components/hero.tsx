@@ -37,7 +37,7 @@ export function Hero() {
               Tải xuống ứng dụng Nutri Guardian để có kế hoạch dinh dưỡng cá nhân hóa, phát hiện chất gây dị ứng và hướng dẫn chuyên gia từ Đội Dr. Han. Giải pháp quản lý dị ứng thực phẩm đáng tin cậy nhất.
             </p>
 
-            <a href="#" className="inline-block bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-lg hover:shadow-xl transition-shadow">
+            <a href="https://l.facebook.com/l.php?u=https%3A%2F%2Fexpo.dev%2Faccounts%2Fdematto%2Fprojects%2Fnutri-guardian-mobile%2Fbuilds%2F79659857-606f-4f32-a68b-97c600667904&h=AT2qKQHBlz1C3eZdIB6FHfem2bkdBZSMG-hepNyn1yWFOa-ngGrT6uU56siq8Y_uj8wC4O16xv_a_xC_mhHRolJvVezpJQuwkSp9Rbszq4IrzhgCb6CiD8PxGP5DAss&s=1" className="inline-block bg-white/20 backdrop-blur-sm rounded-lg p-3 shadow-lg hover:shadow-xl transition-shadow">
               <img
                 src="/images/apk-icon.png"
                 alt="Tải APK cho android"
